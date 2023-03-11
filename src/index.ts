@@ -14,7 +14,11 @@ App.use(Cors({
 App.use(Express.json());
 
 async function RegisterRoute(Route: string) {
-    App.get(Route, (await import(`./routes${Route}.ts`)).default);
+    try {
+        App.get(Route, (await import(`./routes${Route}.js`)).default);
+    } catch (e) {
+        App.get(Route, (await import(`./routes${Route}.ts`)).default);
+    }
 }
 
 RegisterRoute("/savings");
