@@ -15,7 +15,7 @@ export default (req: Express.Request, res: Express.Response) => {
         currentDate.setDate(currentDate.getDate() + 1);
 
         if (currentDate.getDate() == 1) savedUp += allowance;
-        if (currentDate.getDate() == 22 && currentDate.getMonth() == 8) savedUp += birthdayMoney;
+        if (currentDate.getDate() == 22 && currentDate.getMonth() == 7) savedUp += birthdayMoney;
 
         if (currentDate.getFullYear() == now.getFullYear() && currentDate.getMonth() == now.getMonth() && currentDate.getDate() == now.getDate()) savedUpRightNow = savedUp;
     }
